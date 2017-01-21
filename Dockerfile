@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Aleksandar Dimitrov <aleks.dimitrov@gmail.com>
 
 ENV runtime_dependencies="git imagemagick ffmpeg rsync"
-ENV build_dependencies=""
+ENV build_dependencies="curl"
 ENV git_lfs_version "1.5.5"
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" \
