@@ -24,3 +24,7 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" \
  && rm -rf $tmp
 
 ENV PATH /usr/local/Expose:$PATH
+
+RUN useradd -ms /bin/bash builder
+USER builder
+WORKDIR /home/builder
