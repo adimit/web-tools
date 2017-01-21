@@ -16,7 +16,11 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" \
  && curl -LO https://github.com/git-lfs/git-lfs/releases/download/v${git_lfs_version}/git-lfs-linux-amd64-${git_lfs_version}.tar.gz \
  && tar xf git-lfs-linux-amd64-${git_lfs_version}.tar.gz \
  && mv git-lfs-${git_lfs_version}/git-lfs /usr/local/bin \
+ && cd /usr/local/ \
+ && git clone https://github.com/Jack000/Expose.git \
  && apt-get remove -qy $build_dependencies \
  && apt-get autoremove -qy \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf $tmp
+
+ENV PATH /usr/local/Expose:$PATH
